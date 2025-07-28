@@ -13,10 +13,12 @@ export default function Home() {
         <a href={`/tech-blog/about/`}>こちら</a>
       </p>
 
+      {/* 取得したカテゴリでループ */}
       {categories.map(cat => (
         <div key={cat}>
           <h1>📁 {cat}</h1>
           <ul>
+            {/* カテゴリに該当する記事だけを抽出してリスト化 */}
             {posts.filter(p => p.category === cat).map(post => (
               <li key={post.slug}>
                 <Link href={`/posts/${post.slug}`}>
